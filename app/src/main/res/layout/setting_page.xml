@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:id="@+id/setting_page"
+    android:layout_weight="1"
+    android:visibility="gone"
+    android:layout_height="match_parent">
+
+    <!-- Read byte -->
+    <LinearLayout
+
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+
+        android:orientation="vertical"
+        android:background="#202020"
+        android:tag="Read block">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1.5dip"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#202020"
+            android:tag="Read block">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="设备号："
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:minWidth="150dp"
+                android:layout_gravity="center"/>
+
+            <EditText
+                android:id="@+id/设备号2"
+                android:text="P3500-006A"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="6dp"
+                android:layout_weight="1"
+                android:background="#aaaaaa"
+                android:focusableInTouchMode="false"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1.5dip"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#202020"
+            android:tag="Read block">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="工作电压："
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:minWidth="150dp"
+                android:layout_gravity="center"/>
+
+            <EditText
+                android:id="@+id/工作电压"
+                android:text="48.0"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="6dp"
+                android:layout_weight="1"
+                android:background="#aaaaaa"
+                android:focusableInTouchMode="true"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1.5dip"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#202020"
+            android:tag="Read block">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="响应电流："
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:minWidth="150dp"
+                android:layout_gravity="center"/>
+
+            <EditText
+                android:id="@+id/响应电流"
+                android:text="1.0"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="6dp"
+                android:layout_weight="1"
+                android:background="#aaaaaa"
+                android:focusableInTouchMode="true"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1.5dip"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#202020"
+            android:tag="Read block">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="油门低位PWM："
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:minWidth="150dp"
+                android:layout_gravity="center"/>
+
+            <EditText
+                android:id="@+id/油门低位PWM"
+                android:text="1100"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="6dp"
+                android:layout_weight="1"
+                android:background="#aaaaaa"
+                android:focusableInTouchMode="true"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1.5dip"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#202020"
+            android:tag="Read block">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="油门高位PWM："
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:minWidth="150dp"
+                android:layout_gravity="center"/>
+
+            <EditText
+                android:id="@+id/油门高位PWM"
+                android:text="1900"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="6dp"
+                android:layout_weight="1"
+                android:background="#aaaaaa"
+                android:focusableInTouchMode="true"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1.5dip"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#202020"
+            android:tag="Read block">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="舵机正反："
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:minWidth="150dp"
+                android:layout_gravity="center"/>
+
+            <EditText
+                android:id="@+id/舵机正反"
+                android:text="1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="6dp"
+                android:layout_weight="1"
+                android:background="#aaaaaa"
+                android:focusableInTouchMode="true"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1.5dip"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#202020"
+            android:tag="Read block">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="缸头报警温度："
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:minWidth="150dp"
+                android:layout_gravity="center"/>
+
+            <EditText
+                android:id="@+id/缸头报警温度"
+                android:text="100"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="6dp"
+                android:layout_weight="1"
+                android:background="#aaaaaa"
+                android:focusableInTouchMode="true"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1.5dip"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#202020"
+            android:tag="Read block">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="发电机报警温度："
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:minWidth="150dp"
+                android:layout_gravity="center"/>
+
+            <EditText
+                android:id="@+id/发电机报警温度"
+                android:text="100"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="6dp"
+                android:layout_weight="1"
+                android:background="#aaaaaa"
+                android:focusableInTouchMode="true"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1.5dip"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#202020"
+            android:tag="Read block">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="保养周期："
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:minWidth="150dp"
+                android:layout_gravity="center"/>
+
+            <EditText
+                android:id="@+id/保养周期"
+                android:text="52"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="6dp"
+                android:layout_weight="1"
+                android:background="#aaaaaa"
+                android:focusableInTouchMode="true"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1.5dip"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#202020"
+            android:tag="Read block">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="剩余保养时间："
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:minWidth="150dp"
+                android:layout_gravity="center"/>
+
+            <EditText
+                android:id="@+id/剩余保养时间"
+                android:text="52"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="6dp"
+                android:layout_weight="1"
+                android:background="#aaaaaa"
+                android:focusableInTouchMode="true"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1.5dip"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#202020"
+            android:tag="Read block">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="读取"
+                android:gravity="center"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:minWidth="150dp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/写入"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="写入"
+                android:gravity="center"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:minWidth="150dp"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

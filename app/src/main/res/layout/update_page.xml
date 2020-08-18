@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:id="@+id/update_page"
+    android:layout_weight="1"
+    android:visibility="gone"
+    android:layout_height="match_parent">
+    <LinearLayout
+
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+
+        android:orientation="vertical"
+        android:background="#202020"
+        android:tag="Read block">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1.5dip"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#202020"
+            android:tag="Read block">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="设备号："
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:minWidth="150dp"
+                android:layout_gravity="center"/>
+
+            <EditText
+                android:id="@+id/设备号3"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:focusableInTouchMode="false"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1.5dip"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#202020"
+            android:tag="Read block">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="APP版本："
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:minWidth="150dp"
+                android:layout_gravity="center"/>
+
+            <EditText
+                android:id="@+id/APP版本"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:focusableInTouchMode="false"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1.5dip"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#202020"
+            android:tag="Read block">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="发电机固件："
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:minWidth="150dp"
+                android:layout_gravity="center"/>
+
+            <EditText
+                android:id="@+id/发电机固件"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:focusableInTouchMode="false"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1.5dip"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#202020"
+            android:tag="Read block">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1.5dip"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#202020"
+            android:tag="Read block">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="APP升级："
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:minWidth="150dp"
+                android:layout_gravity="center"/>
+
+            <EditText
+                android:id="@+id/新版本V11"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:focusableInTouchMode="false"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1.5dip"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#202020"
+            android:tag="Read block">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="升级"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1.5dip"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#202020"
+            android:tag="Read block">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="发电机固件："
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:minWidth="150dp"
+                android:layout_gravity="center"/>
+
+            <EditText
+                android:id="@+id/新版本V13"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:focusableInTouchMode="false"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1.5dip"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#202020"
+            android:tag="Read block">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="升级"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

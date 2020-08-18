@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:id="@+id/advanced_page"
+    android:layout_weight="1"
+    android:visibility="gone"
+    android:layout_height="match_parent">
+
+    <!-- Read byte -->
+    <LinearLayout
+
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+
+        android:orientation="vertical"
+        android:background="#202020"
+        android:tag="Read block">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1.5dip"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#202020"
+            android:tag="Read block">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="设备号："
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:minWidth="150dp"
+                android:layout_gravity="center"/>
+
+            <EditText
+                android:id="@+id/设备号2"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:focusableInTouchMode="false"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1.5dip"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#202020"
+            android:tag="Read block">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="运行次数："
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:minWidth="150dp"
+                android:layout_gravity="center"/>
+
+            <EditText
+                android:id="@+id/运行次数"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:focusableInTouchMode="false"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1.5dip"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#202020"
+            android:tag="Read block">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="第一次运行LOG："
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:minWidth="150dp"
+                android:layout_gravity="center"/>
+
+            <EditText
+                android:id="@+id/第一次运行LOG"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:focusableInTouchMode="false"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1.5dip"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#202020"
+            android:tag="Read block">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="第二次运行LOG："
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:minWidth="150dp"
+                android:layout_gravity="center"/>
+
+            <EditText
+                android:id="@+id/第二次运行LOG"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:focusableInTouchMode="false"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1.5dip"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#202020"
+            android:tag="Read block">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="第三次运行LOG："
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:minWidth="150dp"
+                android:layout_gravity="center"/>
+
+            <EditText
+                android:id="@+id/第三次运行LOG"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:focusableInTouchMode="false"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1.5dip"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#202020"
+            android:tag="Read block">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="第四次运行LOG："
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:minWidth="150dp"
+                android:layout_gravity="center"/>
+
+            <EditText
+                android:id="@+id/第四次运行LOG"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:focusableInTouchMode="false"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1.5dip"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#202020"
+            android:tag="Read block">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="第五次运行LOG："
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:minWidth="150dp"
+                android:layout_gravity="center"/>
+
+            <EditText
+                android:id="@+id/第五次运行LOG"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:focusableInTouchMode="false"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1.5dip"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#202020"
+            android:tag="Read block">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="第六次运行LOG："
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:minWidth="150dp"
+                android:layout_gravity="center"/>
+
+            <EditText
+                android:id="@+id/第六次运行LOG"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:focusableInTouchMode="false"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1.5dip"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#202020"
+            android:tag="Read block">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="第七次运行LOG："
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:minWidth="150dp"
+                android:layout_gravity="center"/>
+
+            <EditText
+                android:id="@+id/第七次运行LOG"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:focusableInTouchMode="false"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1.5dip"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#202020"
+            android:tag="Read block">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="第八次运行LOG："
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:minWidth="150dp"
+                android:layout_gravity="center"/>
+
+            <EditText
+                android:id="@+id/第八次运行LOG"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:focusableInTouchMode="false"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1.5dip"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#202020"
+            android:tag="Read block">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="第九次运行LOG："
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:minWidth="150dp"
+                android:layout_gravity="center"/>
+
+            <EditText
+                android:id="@+id/第九次运行LOG"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:focusableInTouchMode="false"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1.5dip"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#202020"
+            android:tag="Read block">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="第十次运行LOG："
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:minWidth="150dp"
+                android:layout_gravity="center"/>
+
+            <EditText
+                android:id="@+id/第十次运行LOG"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:focusableInTouchMode="false"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_margin="1.5dip"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#202020"
+            android:tag="Read block">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="第十一次运行LOG："
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:minWidth="150dp"
+                android:layout_gravity="center"/>
+
+            <EditText
+                android:id="@+id/第十一次运行LOG"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:focusableInTouchMode="false"
+                android:gravity="center" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
