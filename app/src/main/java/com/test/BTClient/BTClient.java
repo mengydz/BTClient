@@ -45,24 +45,17 @@ public class BTClient extends Activity implements View.OnClickListener {
     private final static String MY_UUID = "00001101-0000-1000-8000-00805F9B34FB";   //SPP服务UUID号
 
     private InputStream is;    //输入流，用来接收蓝牙数据
-    //private TextView text0;    //提示栏解句柄
-    private EditText edit0,editHex;    //发送数据输入句柄
+    private EditText editHex;    //发送数据输入句柄
     private TextView tv_in;       //接收数据显示句柄
     private ScrollView sv;      //翻页句柄
     private String smsg = "";    //显示用数据缓存
-    private String fmsg = "";    //保存用数据缓存
 
-    public String filename=""; //用来保存存储的文件名
     BluetoothDevice _device = null;     //蓝牙设备
     BluetoothSocket _socket = null;      //蓝牙通信socket
-    boolean _discoveryFinished = false;
     boolean bRun = true;
     boolean bThread = false;
 
     private BluetoothAdapter _bluetooth = BluetoothAdapter.getDefaultAdapter();    //获取本地蓝牙适配器，即蓝牙设备
-
-    private boolean receptionHex = false,sendHex = false;
-    private CheckBox sendCheckBox,receptionCheckBox;
 
     /** Called when the activity is first created. */
     @Override
@@ -84,17 +77,9 @@ public class BTClient extends Activity implements View.OnClickListener {
             }
         }
         ///---------------------------------------------------
-        //text0 = (TextView)findViewById(R.id.Text0);  //得到提示栏句柄
-        edit0 = (EditText)findViewById(R.id.Edit0);   //得到输入框句柄
         editHex = findViewById(R.id.EditHex);
         sv = (ScrollView)findViewById(R.id.ScrollView01);  //得到翻页句柄
         tv_in = (TextView) findViewById(R.id.in);      //得到数据显示句柄
-
-        sendCheckBox = findViewById(R.id.button_group_send);
-        receptionCheckBox = findViewById(R.id.button_group_reception);
-
-        receptionCheckBox.setOnClickListener(this);
-        sendCheckBox.setOnClickListener(this);
 
         //如果打开本地蓝牙设备不成功，提示信息，结束程序
         if (_bluetooth == null){
@@ -121,25 +106,17 @@ public class BTClient extends Activity implements View.OnClickListener {
             Toast.makeText(this, "请先连接HC模块", Toast.LENGTH_SHORT).show();
             return;
         }
-        if(edit0.getText().length()==0&&!sendHex){
-            Toast.makeText(this, "请先输入数据1", Toast.LENGTH_SHORT).show();
-            return;
-        }
 
-        if(editHex.getText().length()==0&&sendHex){
+        if(editHex.getText().length()==0){
             Toast.makeText(this, "请先输入数据2", Toast.LENGTH_SHORT).show();
             return;
         }
 
         try{
-
             OutputStream os = _socket.getOutputStream();   //蓝牙连接输出流
             byte[] bos ;
-            if (!sendHex)
-                bos =edit0.getText().toString().getBytes("GB2312");
-            else {
-                bos = hexString2ByteArray(editHex.getText().toString());
-            }
+
+            bos = hexString2ByteArray(editHex.getText().toString());
             for(i=0;i<bos.length;i++){
                 if(bos[i]==0x0a)n++;
             }
@@ -217,59 +194,6 @@ public class BTClient extends Activity implements View.OnClickListener {
         }
     }
 
-   /* //接收数据线程
-    Thread readThread=new Thread(){
-
-        public void run(){
-            int num = 0;
-            byte[] buffer = new byte[1024];
-            byte[] buffer_new = new byte[1024];
-            byte[] dataBuffer = new byte[4096];
-            int i = 0;
-            int n = 0;
-            bRun = true;
-            //接收线程
-            while(true){
-                try{
-                    while(is.available()==0){
-                        while(bRun == false){}
-                    }
-                    while(true){
-                        if(!bThread)//跳出循环
-                            return;
-
-                        num = is.read(buffer);         //读入数据
-                        n=0;
-
-                        String s0 = new String(buffer,0,num);
-                        fmsg+=s0;    //保存收到数据
-                        for(i=0;i<num;i++){
-                            if((buffer[i] == 0x0d)&&(buffer[i+1]==0x0a)){
-                                buffer_new[n] = 0x0a;
-                                i++;
-                            }else{
-                                buffer_new[n] = buffer[i];
-                            }
-                            n++;
-                        }
-                        //String s = new String(buffer_new,0,n);
-                        System.arraycopy(buffer_new,0,dataBuffer,lengthArray(dataBuffer),lengthArray(buffer_new));
-                        buffer_new = clearArray(buffer_new);
-                        String str = new String(dataBuffer,0,lengthArray(dataBuffer),"GBK");
-                        smsg+=str;   //写入接收缓存
-                        Thread.sleep(100);
-                        if(is.available()==0)break;  //短时间没有数据才跳出进行显示
-                    }
-                    //发送显示消息，进行显示刷新
-                    dataBuffer=clearArray(dataBuffer);
-                    buffer_new=clearArray(buffer_new);
-                    handler.sendMessage(handler.obtainMessage());
-                }catch(Exception e){
-                }
-            }
-        }
-    };*/
-
     Thread mListenerThread;
 
     private void initListenerThread(){
@@ -290,15 +214,8 @@ public class BTClient extends Activity implements View.OnClickListener {
                                     bytes = clearArray(bytes);
                                     Thread.sleep(100);//短时间内没数据才退出
                                 } while (is.available() != 0);
-                                //len = lengthArray(dataByte);
-                                if (receptionHex)
-                                    str = bytesToHexString(getValidArray(dataByte));
-                                else
-                                    str = new String(dataByte, 0, dataByte.length, "GB2312");//GB2312编码
-                                //str = new String(dataByte,0,len,"GBK");
-                                log(str);
+                                str = bytesToHexString(getValidArray(dataByte));
                                 smsg+=str;
-                                fmsg+=str;    //保存收到数据
                                 handler.sendMessage(handler.obtainMessage());
                                 bytes[0] = 0;
                                 dataByte[0] = 0;
@@ -334,40 +251,6 @@ public class BTClient extends Activity implements View.OnClickListener {
             }catch(Exception e){}
         //	_bluetooth.disable();  //关闭蓝牙服务
     }
-
-    //菜单处理部分
-  /* @Override
-    public boolean onCreateOptionsMenu(Menu menu) {//建立菜单
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.option_menu, menu);
-        return true;
-    }*/
-
-  /*  @Override
-    public boolean onOptionsItemSelected(MenuItem item) { //菜单响应函数
-        switch (item.getItemId()) {
-        case R.id.scan:
-        	if(_bluetooth.isEnabled()==false){
-        		Toast.makeText(this, "Open BT......", Toast.LENGTH_LONG).show();
-        		return true;
-        	}
-            // Launch the DeviceListActivity to see devices and do scan
-            Intent serverIntent = new Intent(this, DeviceListActivity.class);
-            startActivityForResult(serverIntent, REQUEST_CONNECT_DEVICE);
-            return true;
-        case R.id.quit:
-            finish();
-            return true;
-        case R.id.clear:
-        	smsg="";
-        	ls.setText(smsg);
-        	return true;
-        case R.id.save:
-        	Save();
-        	return true;
-        }
-        return false;
-    }*/
 
     //连接按键响应函数
     public void onConnectButtonClicked(View v){
@@ -421,15 +304,9 @@ public class BTClient extends Activity implements View.OnClickListener {
         }
     }
 
-    //保存按键响应函数
-    public void onSaveButtonClicked(View v){
-        Save();
-    }
-
     //清除按键响应函数
     public void onClearButtonClicked(View v){
         smsg="";
-        fmsg="";
         tv_in.setText(smsg);
     }
 
@@ -453,52 +330,6 @@ public class BTClient extends Activity implements View.OnClickListener {
         }
 
         finish();
-    }
-
-    //保存功能实现
-    private void Save() {
-        //显示对话框输入文件名
-        LayoutInflater factory = LayoutInflater.from(BTClient.this);  //图层模板生成器句柄
-        final View DialogView =  factory.inflate(R.layout.sname, null);  //用sname.xml模板生成视图模板
-        new AlertDialog.Builder(BTClient.this)
-                .setTitle("文件名")
-                .setView(DialogView)   //设置视图模板
-                .setPositiveButton("确定",
-                        new DialogInterface.OnClickListener() //确定按键响应函数
-                        {
-                            public void onClick(DialogInterface dialog, int whichButton){
-                                EditText text1 = (EditText)DialogView.findViewById(R.id.sname);  //得到文件名输入框句柄
-                                filename = text1.getText().toString();  //得到文件名
-
-                                try{
-                                    if(Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)){  //如果SD卡已准备好
-
-                                        filename =filename+".txt";   //在文件名末尾加上.txt
-                                        File sdCardDir = Environment.getExternalStorageDirectory();  //得到SD卡根目录
-                                        File BuildDir = new File(sdCardDir, "/data");   //打开data目录，如不存在则生成
-                                        if(BuildDir.exists()==false)BuildDir.mkdirs();
-                                        File saveFile =new File(BuildDir, filename);  //新建文件句柄，如已存在仍新建文档
-                                        FileOutputStream stream = new FileOutputStream(saveFile);  //打开文件输入流
-                                        stream.write(fmsg.getBytes());
-                                        stream.close();
-                                        Toast.makeText(BTClient.this, "存储成功！\n\r"+saveFile, Toast.LENGTH_LONG).show();
-                                    }else{
-                                        Toast.makeText(BTClient.this, "没有存储卡！", Toast.LENGTH_LONG).show();
-                                    }
-
-                                }catch(IOException e){
-                                    return;
-                                }
-
-
-
-                            }
-                        })
-                .setNegativeButton("取消",   //取消按键响应函数,直接退出对话框不做任何处理
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                            }
-                        }).show();  //显示对话框
     }
 
     private int lengthArray(byte[] as){
@@ -535,40 +366,8 @@ public class BTClient extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.button_group_reception:
-                receptionHex = receptionCheckBox.isChecked();
-                break;
-            case R.id.button_group_send:
-                sendHex = sendCheckBox.isChecked();
-                initEdit(sendHex);
-                break;
-        }
-    }
 
-    private void initEdit(boolean isHex){
-        if (isHex){
-            Toast.makeText(this, "只能输入0到F的字符", Toast.LENGTH_SHORT).show();
-            edit0.setVisibility(View.GONE);
-            editHex.setVisibility(View.VISIBLE);
-            editHex.setText("");
-            editHex.setFocusable(true);
-            editHex.setFocusableInTouchMode(true);
-            editHex.requestFocus();
-            this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
-            editHex.setSelection(editHex.getText().toString().length());
-        }else {
-            edit0.setVisibility(View.VISIBLE);
-            editHex.setVisibility(View.GONE);
-            edit0.setText("");
-            edit0.setFocusable(true);
-            edit0.setFocusableInTouchMode(true);
-            edit0.requestFocus();
-            this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
-            edit0.setSelection(edit0.getText().toString().length());
-        }
     }
-
 
     /**
      * 将16进制字符串转换为byte[]
@@ -648,10 +447,6 @@ public class BTClient extends Activity implements View.OnClickListener {
         if (gps || network) {
             return true;
         } return false;
-    }
-
-    private void log(String log){
-        Log.d("AppRunBTC",log);
     }
 
 }

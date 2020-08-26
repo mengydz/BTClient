@@ -49,40 +49,6 @@
             android:textColor="@android:color/black" />
     </ScrollView>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#d1d2d6"/>
-
-    <RadioGroup
-        android:id="@+id/button_manage_group"
-        android:paddingTop="3dp"
-        android:paddingBottom="2dp"
-        android:layout_width="match_parent"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
-        <CheckBox
-            android:id="@+id/button_group_reception"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="2dp"
-            android:text="Hex接收"
-            android:textSize="18sp"
-            style="@style/CustomRadioTheme" />
-        <View
-            android:layout_width="20dp"
-            android:layout_height="match_parent"/>
-        <CheckBox
-            android:id="@+id/button_group_send"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="2dp"
-            android:textSize="18sp"
-            android:text="Hex发送"
-            style="@style/CustomRadioTheme" />
-    </RadioGroup>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -141,15 +107,6 @@
             android:layout_weight="1"
             android:onClick="onConnectButtonClicked"
             android:text="连接"></Button>
-
-        <Button
-            android:id="@+id/BtnSave"
-            style="@android:style/Widget.Button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="onSaveButtonClicked"
-            android:text="保存"></Button>
 
         <Button
             android:id="@+id/BtnClear"
